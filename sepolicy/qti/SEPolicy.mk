@@ -35,4 +35,4 @@ ifneq (,$(filter user, $(TARGET_BUILD_VARIANT)))
         hardware/oplus/sepolicy/qti/test/$(SEPOLICY_PLATFORM)
 endif
 
-include device/lineage/sepolicy/libperfmgr/sepolicy.mk
+include device/voltage/sepolicy/libperfmgr/sepolicy.mk
