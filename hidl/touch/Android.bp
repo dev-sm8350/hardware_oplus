@@ -1,6 +1,9 @@
 cc_binary {
     name: "vendor.lineage.touch@1.0-service.oplus",
-    defaults: ["hidl_defaults"],
+    defaults: [
+        "hidl_defaults",
+        "uses_oplus_touch_defaults",
+    ],
     init_rc: ["vendor.lineage.touch@1.0-service.oplus.rc"],
     vintf_fragments: ["vendor.lineage.touch@1.0-service.oplus.xml"],
     vendor: true,
@@ -15,6 +18,8 @@ cc_binary {
         "libhidlbase",
         "libutils",
         "vendor.lineage.touch@1.0",
+        "vendor.oplus.hardware.touch-V1-ndk",
+        "libbinder_ndk",
     ],
     include_dirs: select(soong_config_variable("OPLUS_LINEAGE_TOUCH_HAL", "INCLUDE_DIR"), {
         any @ flag_val: [flag_val],
