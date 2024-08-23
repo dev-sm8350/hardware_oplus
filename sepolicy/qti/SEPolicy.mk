@@ -29,4 +29,10 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
     hardware/oplus/sepolicy/qti/public/common-um
 endif
 
+ifneq (,$(filter user, $(TARGET_BUILD_VARIANT)))
+    BOARD_VENDOR_SEPOLICY_DIRS += \
+        hardware/oplus/sepolicy/qti/test \
+        hardware/oplus/sepolicy/qti/test/$(SEPOLICY_PLATFORM)
+endif
+
 include device/lineage/sepolicy/libperfmgr/sepolicy.mk
